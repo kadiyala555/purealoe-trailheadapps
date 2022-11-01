@@ -4,13 +4,15 @@ on:
     branches: demo
     
 jobs:
-  pmd-run: 
-      runs-on: ubuntu-latest
-      steps: 
+    pmd-run: 
+        runs-on: ubuntu-latest
+        steps: 
       #checking out source code.
-          - name: 'checkout source code'
-            uses: actions/checkout@v2
+            - name: 'checkout source code'
+              uses: actions/checkout@v2
             
             #install PMD
-          - name: 'Install PMD'
-            run: 
+            - name: 'Install PMD'
+              run: |
+                  PMD_VERSION= 'cat pmd/pmd-version.txt'
+                  wget https://github.com/pmd/pmd/releases/pmd_releases%2F
